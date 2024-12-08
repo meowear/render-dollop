@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Convincing</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/a/a7/Rick_Astley_-_Never_Gonna_Give_You_Up.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: white;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+        }
+        .loader {
+            border: 8px solid #f3f3f3; /* Light gray */
+            border-top: 8px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .message {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+        video {
+            display: none;
+        }
+        audio {
+            display: none;
+        }
+    </style>
+    <script>
+        function showVideo() {
+            // Show the video after the fake loading
+            document.querySelector('.loader').style.display = 'none';
+            document.querySelector('.message').textContent = 'almond tss';
+            document.querySelector('video').style.display = 'block';
+
+            // Play the badum-tss sound after a delay
+            setTimeout(() => {
+                document.querySelector('audio').play();
+            }, 1000); // Play sound 1 second after video starts
+        }
+
+        function startFakeLoading() {
+            setTimeout(showVideo, 5000); // 5 seconds of fake loading
+        }
+    </script>
+</head>
+<body onload="startFakeLoading()">
+    <div class="container">
+        <h1>To the noble cause of convincing...</h1>
+        <p class="message">made a loading website because I finally can</p>
+        <div class="loader"></div>
+
+        <!-- Vercel Hosted Video Embed -->
+        <video width="640" height="480" autoplay controls>
+            <source src="https://your-vercel-domain.vercel.app/static/media/first.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Vercel Hosted MP3 Embed -->
+        <audio>
+            <source src="https://your-vercel-domain.vercel.app/static/media/ba-dum-tss-8279.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</body>
+</html>
