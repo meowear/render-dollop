@@ -1,0 +1,9 @@
+{
+    "version": 2,
+    "builds": [
+        { "src": "rickroll_website/wsgi.py", "use": "@vercel/python" }
+    ],
+    "routes": [
+        { "src": "/(.*)", "dest": "rickroll_website/wsgi.py" }
+    ]
+}
